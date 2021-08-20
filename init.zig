@@ -7,7 +7,7 @@ const mod_2d_render = @import("2d-render/init.zig");
 
 pub fn init(world: *flecs.World) void {
     // init modules
-    mod_2d_render.init();
+    mod_2d_render.init(world);
 
     // init components
 
