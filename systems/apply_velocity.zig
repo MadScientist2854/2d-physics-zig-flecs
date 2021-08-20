@@ -3,8 +3,8 @@ const rl = @import("raylib");
 const rm = @import("raymath");
 const components = @import("../components/export.zig");
 
-pub fn apply_velocity(it: *flecs.ecs_iter_t) callconv(.C) void { // Velocity, Position
-    const velocities = it.column(components.Velocity, 1);
+pub fn apply_velocity(it: *flecs.ecs_iter_t) callconv(.C) void {
+    const velocities = it.column(components.Velocity2D, 1);
     const positions = it.column(components.Position2D, 2);
 
     var i: usize = 0;

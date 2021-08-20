@@ -10,9 +10,9 @@ pub fn init(world: *flecs.World) void {
     mod_2d_render.init(world);
 
     // init components
-
+    _ = world.newComponent(components.Velocity2D);
 
     // init systems
-
+    _ = world.newSystem("Apply Velocity", .on_update, "Velocity2D, Position2D", systems.apply_velocity);
 
 }
