@@ -11,8 +11,10 @@ pub fn init(world: *flecs.World) void {
 
     // init components
     _ = world.newComponent(components.Velocity2D);
+    _ = world.newComponent(components.PhysicsBody);
 
     // init systems
-    _ = world.newSystem("Apply Velocity", .on_update, "Velocity2D, Position2D", systems.apply_velocity);
+    _ = world.newSystem("Update Physac", .pre_update, "", systems.update_physac);
 
+    _ = world.newSystem("Apply Velocity", .on_update, "Velocity2D, Position2D", systems.apply_velocity);
 }
